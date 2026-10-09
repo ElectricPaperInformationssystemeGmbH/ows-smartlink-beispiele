@@ -1,0 +1,48 @@
+name: Selbsttest
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  gen2-java:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Selbsttest
+        working-directory: gen2/java
+        run: java SmartLinkGeneratorGen2.java | tee ausgabe.txt && grep -q "Selbsttest bestanden" ausgabe.txt
+
+  gen2-go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+      - name: Selbsttest
+        working-directory: gen2/go
+        run: go run smartlink_gen2.go | tee ausgabe.txt && grep -q "Selbsttest bestanden" ausgabe.txt
+
+  gen2-rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Selbsttest
+        working-directory: gen2/rust
+        run: cargo run --locked --quiet | tee ausgabe.txt && grep -q "Selbsttest bestanden" ausgabe.txt
+
+  gen2-php:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+      - name: Selbsttest
+        working-directory: gen2/php
+        run: php smartlink_gen2.php | tee ausgabe.txt && grep -q "Selbsttest bestanden" ausgabe.txt
