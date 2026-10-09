@@ -5,8 +5,9 @@ Referenzimplementierungen für die SmartLink-Anmeldung der uniWAHL OWS. Mit eine
 | Ordner | Plattform | Inhalt |
 |---|---|---|
 | [`gen2/`](gen2) | zweite Generation (GEN2) | Java, Go, Rust, PHP |
+| [`website/`](website) | – | Dokumentation (Docusaurus) |
 
-Die fachliche Beschreibung steht im Dokument „SmartLink Authentifizierung“ der jeweiligen Generation, das Sie von uniWAHL OWS erhalten.
+Die fachliche Beschreibung steht in der **Dokumentation: https://electricpaperinformationssystemegmbh.github.io/ows-smartlink-beispiele/** (Quelle im Ordner [`website/`](website), gebaut mit Docusaurus).
 
 ## Zweite Generation (GEN2)
 
@@ -47,3 +48,13 @@ Die früher verteilten Beispiele der ersten Generation bilden die GEN1-URL und g
 ## Lizenz
 
 [MIT No Attribution](LICENSE) – Sie dürfen den Code ohne Namensnennung in eigene Anwendungen übernehmen.
+
+## Dokumentation lokal ansehen
+
+```bash
+cd website
+npm ci
+npm start
+```
+
+Bei jedem Push auf `main` baut die Action „Website“ die Seite und veröffentlicht sie über GitHub Pages.

@@ -1,0 +1,56 @@
+---
+title: Referenzimplementierungen
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import Java from '!!raw-loader!../../../gen2/java/SmartLinkGeneratorGen2.java';
+import Go from '!!raw-loader!../../../gen2/go/smartlink_gen2.go';
+import Rust from '!!raw-loader!../../../gen2/rust/src/main.rs';
+import Php from '!!raw-loader!../../../gen2/php/smartlink_gen2.php';
+
+# Referenzimplementierungen
+
+Für die Erzeugung von auth-token und SmartLink stehen Referenzimplementierungen in vier Sprachen bereit. Jede führt zuerst einen Selbsttest mit festen Beispielwerten aus und gibt `Selbsttest bestanden` und einen Beispiel-Link aus; alle vier erzeugen dabei zeichengleich denselben Link. Tragen Sie anschließend die Angaben aus Ihrer SmartLink-Zugangsdaten-Datei in die leeren Felder ein.
+
+Der Code unten ist derselbe wie im [Repository](https://github.com/ElectricPaperInformationssystemeGmbH/ows-smartlink-beispiele/tree/main/gen2); eine GitHub-Action führt die Selbsttests bei jeder Änderung aus.
+
+<Tabs groupId="sprache">
+  <TabItem value="java" label="Java" default>
+
+Ab Java 11: `java SmartLinkGeneratorGen2.java` ([Datei auf GitHub](https://github.com/ElectricPaperInformationssystemeGmbH/ows-smartlink-beispiele/blob/main/gen2/java/SmartLinkGeneratorGen2.java))
+
+<CodeBlock language="java" title="SmartLinkGeneratorGen2.java">{Java}</CodeBlock>
+
+  </TabItem>
+  <TabItem value="go" label="Go">
+
+`go run smartlink_gen2.go` ([Datei auf GitHub](https://github.com/ElectricPaperInformationssystemeGmbH/ows-smartlink-beispiele/blob/main/gen2/go/smartlink_gen2.go))
+
+<CodeBlock language="go" title="smartlink_gen2.go">{Go}</CodeBlock>
+
+  </TabItem>
+  <TabItem value="rust" label="Rust">
+
+`cargo run` im Ordner `gen2/rust`; Abhängigkeiten `hmac = "0.12"`, `sha2 = "0.10"` ([Datei auf GitHub](https://github.com/ElectricPaperInformationssystemeGmbH/ows-smartlink-beispiele/blob/main/gen2/rust/src/main.rs))
+
+<CodeBlock language="rust" title="src/main.rs">{Rust}</CodeBlock>
+
+  </TabItem>
+  <TabItem value="php" label="PHP">
+
+Ab PHP 8.0: `php smartlink_gen2.php` ([Datei auf GitHub](https://github.com/ElectricPaperInformationssystemeGmbH/ows-smartlink-beispiele/blob/main/gen2/php/smartlink_gen2.php))
+
+<CodeBlock language="php" title="smartlink_gen2.php">{Php}</CodeBlock>
+
+  </TabItem>
+</Tabs>
+
+Die Beispiele stehen unter der Lizenz [MIT No Attribution](https://github.com/ElectricPaperInformationssystemeGmbH/ows-smartlink-beispiele/blob/main/LICENSE) und dürfen ohne Namensnennung in eigene Anwendungen übernommen werden.
+
+:::caution Ältere Beispiele
+
+Die für die erste Generation verteilten Referenzimplementierungen bilden die GEN1-URL ohne Realm-Segment und ohne URI-Kodierung. Für GEN2 verwenden Sie bitte ausschließlich die Fassungen auf dieser Seite.
+
+:::

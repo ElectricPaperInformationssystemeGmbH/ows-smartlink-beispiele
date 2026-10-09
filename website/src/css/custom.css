@@ -1,0 +1,39 @@
+/* Farben nach dem Erscheinungsbild von Electric Paper Wahlsysteme */
+:root {
+  --ifm-color-primary: #bf0930;
+  --ifm-color-primary-dark: #ac082b;
+  --ifm-color-primary-darker: #a20829;
+  --ifm-color-primary-darkest: #860622;
+  --ifm-color-primary-light: #d20a35;
+  --ifm-color-primary-lighter: #dc0a38;
+  --ifm-color-primary-lightest: #f2204d;
+  --ifm-link-color: #00517b;
+  --ifm-code-font-size: 92%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #f2506f;
+  --ifm-color-primary-dark: #ef3159;
+  --ifm-color-primary-darker: #ee214d;
+  --ifm-color-primary-darkest: #d0103a;
+  --ifm-color-primary-light: #f56f85;
+  --ifm-color-primary-lighter: #f67f91;
+  --ifm-color-primary-lightest: #f9a9b6;
+  --ifm-link-color: #7cc3eb;
+}
+
+.markdown img {
+  display: block;
+  margin: 1rem auto 0.25rem;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.bildunterschrift {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 1.5rem;
+}

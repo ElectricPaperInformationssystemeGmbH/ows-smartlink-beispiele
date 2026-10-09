@@ -1,1 +1,5 @@
+.DS_Store
 gen2/rust/target/
+website/node_modules/
+website/build/
+website/.docusaurus/
